@@ -1,2 +1,109 @@
 // Required
 @import "bootstrap/scss/bootstrap";
+@import "scss/mixins";
+@import "scss/vars";
+
+html {
+    padding: 0;
+    margin: 0;
+    font-family: $font;
+}
+
+.navbar {
+    background-color: white;
+    .navbar-brand {
+        font-weight: 700;
+        color: $gray-700;
+        margin-left: 50px;
+        &:hover {
+            color: white;
+        }
+    }
+    
+    #navbarNav {
+        font-family: $font-sans;
+        position: absolute;
+        right: 170px;
+    
+        .nav-item {    
+            margin-left: 40px;
+            .nav-link {
+                color: $gray-700;
+                margin: 0; 
+                padding: 0;
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    height: 100vh;
+    background: url('/images/hero_bg.jpg');
+    background: {
+        repeat: no-repeat;
+        position: center;
+        size: cover;
+        color: $brown;
+        blend-mode: multiply;
+    }
+    text-align: center;
+
+    &__container {
+        width: 70%;
+        h1 {
+            @include header-big;
+        }
+        hr {
+           @include separator($orange, 100px);
+        }
+        p {
+            font-family: $font;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            opacity: .75;
+        }
+        a.btn {
+            @include btn($orange, white);
+        }
+    }
+}
+
+.cta {
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    text-align: center;
+    background: $orange;
+    color: white;
+    &__container {
+        width: 70%;
+        h1 {
+            @include header-big;
+        }
+        hr {
+            @include separator(white, 100px);
+        }
+        p {
+            font-family: $font;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 28px;
+            opacity: .75;
+        }
+        a.btn {
+            @include btn(white, $orange);
+            color: black;
+        }
+    }
+}

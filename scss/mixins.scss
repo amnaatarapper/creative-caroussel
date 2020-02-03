@@ -1,0 +1,24 @@
+@mixin header-big {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 67px;
+};
+
+// Make header-medium
+// Make header-small
+
+@mixin separator($color, $width: 100px) {
+    width: $width;
+    border: 1px solid $color;
+};
+@mixin btn($background-color, $color) {
+    color: $color;
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 20px 30px;
+}
