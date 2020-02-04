@@ -119,7 +119,8 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 6.25rem 0;
+    padding: 6.25rem 0;
+    background-color: white;
     &__heading {
         h1 {
             @include header-medium;
@@ -191,6 +192,7 @@ html {
     align-items: center;
     text-align: center;
     padding: 9.375rem 0;
+    background-color: white;
     &__heading {
         h1 {
             @include header-medium;
@@ -265,36 +267,164 @@ html {
             }
         }
     }
+    .services {
+        &__container {
+            flex-flow: column nowrap;
+            width: 50%;
+        }
+    }
+    .gallery {
+        &__items {
+            display: flex;
+            flex-flow: column wrap;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .contacts {
+        width: 100%;
+        padding: 3.125rem 3.125rem;
+        overflow: hidden;
+        &__heading {
+            h1 {
+                font-size: 2.4rem;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+            a.btn {
+                font-size: .9rem;
+            }
+        }
+        &__container {
+            flex-direction: column;
+        }
+    }
+    .footer {
+        padding: 1rem 0;
+        & p {
+            margin: auto 0;
+        }
+    }
 }
-@include media-breakpoint-up(sm) {
+
+@include media-breakpoint-only(sm) {
     body {
         background-color: red;
     }
     .navbar {
+        .navbar-brand {
+            visibility: hidden;
+        }
         #navbarNav {
             position: static;
         }
     }
-
-
+    .hero {    
+        height: 100%;
+        &__container {
+            padding: 6.25rem 0;
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: .9rem;
+            }
+            a.btn {
+                font-size: .7rem;
+            }
+        }
+    }
+    .services {
+        &__container {
+            flex-flow: row wrap;
+            .service__container {
+                width: 50%;
+            }
+        }
+    }
+    .gallery {
+        &__items {
+            display: flex;
+            flex-flow: row wrap;
+            img {
+                width: 50%;
+            }
+        }
+    }
+    .contacts {
+        width: 100%;
+        overflow: hidden;
+        &__container {
+            flex-direction: column;
+        }
+    }
+    .footer {
+        padding: 1rem 0;
+        & p {
+            margin: auto 0;
+        }
+    }
 }
 
-
-
-
-
-// @include media-breakpoint-up(md) {
-//     body {
-//         background-color: blue;
-//     }
-// }
-// @include media-breakpoint-up(lg) {
-//     body {
-//         background-color: green;
-//     }
-// }
-// @include media-breakpoint-up(xl) {
-//     body {
-//         background-color: yellow;
-//     }
-// }
+@include media-breakpoint-only(md) {
+    body {
+        background-color: blue;
+    }
+    .navbar {
+        .navbar-brand {
+            visibility: visible;
+        }
+        #navbarNav {
+            position: absolute;
+            right: 170px;
+        }
+    }
+    .services {
+        &__container {
+            flex-flow: row wrap;
+            .service__container {
+                width: 25%;
+            }
+        }
+    }
+    .contacts {
+        width: 100%;
+        overflow: hidden;
+        &__container {
+            flex-direction: row;
+        }
+    }
+        
+}
+@include media-breakpoint-only(lg) {
+    body {
+        background-color: green;
+    }
+    .hero {
+        height: 100vh;
+    }
+    .gallery {
+        &__items {
+            display: flex;
+            flex-flow: row wrap;
+            img {
+                width: 33.3333%;
+            }
+        }
+    }
+}
+@include media-breakpoint-only(xl) {
+    body {
+        background-color: yellow;
+    }
+    .services {
+        &__container {
+            flex-flow: row wrap;
+            .service__container {
+                width: 25%;
+            }
+        }
+    }
+}
