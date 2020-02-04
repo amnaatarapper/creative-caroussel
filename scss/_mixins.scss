@@ -1,17 +1,31 @@
 @mixin header-big {
+    font-family: $font-sans;
     font-weight: 700;
     font-size: 56px;
     line-height: 67px;
 };
 
-// Make header-medium
-// Make header-small
+@mixin header-medium {
+    font-family: $font-sans;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+};
+
+@mixin header-small {
+    font-family: $font-sans;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+};
 
 @mixin separator($color, $width: 100px) {
     width: $width;
     border: 1px solid $color;
 };
+
 @mixin btn($background-color, $color) {
+    font-family: $font-sans;
     color: $color;
     background-color: $background-color;
     padding: 20px;

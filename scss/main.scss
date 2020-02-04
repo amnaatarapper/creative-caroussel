@@ -4,8 +4,6 @@
 @import "scss/vars";
 
 html {
-    padding: 0;
-    margin: 0;
     font-family: $font;
 }
 
@@ -44,6 +42,7 @@ html {
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: #fff;
     height: 100vh;
     background: url('/images/hero_bg.jpg');
@@ -82,28 +81,154 @@ html {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
     text-align: center;
     background: $orange;
     color: white;
     &__container {
         width: 70%;
+        margin: 150px 0;
         h1 {
-            @include header-big;
+            @include header-medium;
+            margin-bottom: 30px;
         }
         hr {
             @include separator(white, 100px);
+            margin-bottom: 30px;
         }
         p {
             font-family: $font;
             font-weight: 300;
             font-size: 18px;
             line-height: 28px;
-            opacity: .75;
+            opacity: .5;
+            margin-bottom: 30px;
         }
         a.btn {
             @include btn(white, $orange);
             color: black;
         }
+    }
+}
+
+.services {
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 100px 0;
+    &__heading {
+        h1 {
+            @include header-medium;
+        }
+        hr {
+            @include separator($orange, 40px);
+        }
+    }
+    &__container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 90%;
+        .service__container {
+            vertical-align: baseline;
+            margin: 40px 0px;
+            .icon {
+                color: $orange;
+                font: {
+                    weight: 900;
+                    size: 64px;
+                    line-height: 64;
+                }
+            }
+            h1 {
+                font-family: $font-sans;
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 29px;
+            }
+            p {
+                @include header-small;
+                opacity: .75;
+            }
+        }
+    }
+}
+
+.gallery {
+    background-color: #333940;
+    &__items {
+        display: flex;
+        flex-flow: row wrap;
+        img {
+            width: 33.3333%;
+        }
+    }
+    &__info {
+        display:flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 100px 0;
+        h1 {
+            @include header-medium;
+            color: white;
+        }
+        a {
+            @include btn(white, black);
+        }
+    }
+}
+
+.contacts {
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 150px 0;
+    &__heading {
+        h1 {
+            @include header-medium;
+        }
+        hr {
+            @include separator($orange, 40px);
+        }
+        p {
+            @include header-small;
+            opacity: .75;
+        }
+    }
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        .contact {
+            padding: 20px 150px;
+            .icon {
+                color: $gray-700;
+                font: {
+                    weight: 900;
+                    size: 64px;
+                    line-height: 64;
+                }
+            }
+            &:nth-child(2) p {
+                color: $orange;
+            }
+        }  
+    }
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    & p {
+        margin: auto 0;
     }
 }

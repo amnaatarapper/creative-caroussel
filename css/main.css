@@ -6922,8 +6922,6 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 html {
-  padding: 0;
-  margin: 0;
   font-family: "Merriweather", sans-serif; }
 
 .navbar {
@@ -6952,6 +6950,7 @@ html {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #fff;
   height: 100vh;
   background: url("/images/hero_bg.jpg");
@@ -6964,6 +6963,7 @@ html {
   .hero__container {
     width: 70%; }
     .hero__container h1 {
+      font-family: "Merriweather Sans", sans-serif;
       font-weight: 700;
       font-size: 56px;
       line-height: 67px; }
@@ -6977,6 +6977,7 @@ html {
       line-height: 28px;
       opacity: .75; }
     .hero__container a.btn {
+      font-family: "Merriweather Sans", sans-serif;
       color: white;
       background-color: #f4623a;
       padding: 20px;
@@ -6992,26 +6993,31 @@ html {
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
   text-align: center;
   background: #f4623a;
   color: white; }
   .cta__container {
-    width: 70%; }
+    width: 70%;
+    margin: 150px 0; }
     .cta__container h1 {
-      font-weight: 700;
-      font-size: 56px;
-      line-height: 67px; }
+      font-family: "Merriweather Sans", sans-serif;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 38px;
+      margin-bottom: 30px; }
     .cta__container hr {
       width: 100px;
-      border: 1px solid white; }
+      border: 1px solid white;
+      margin-bottom: 30px; }
     .cta__container p {
       font-family: "Merriweather", sans-serif;
       font-weight: 300;
       font-size: 18px;
       line-height: 28px;
-      opacity: .75; }
+      opacity: .5;
+      margin-bottom: 30px; }
     .cta__container a.btn {
+      font-family: "Merriweather Sans", sans-serif;
       color: #f4623a;
       background-color: white;
       padding: 20px;
@@ -7022,3 +7028,120 @@ html {
       font-size: 14px;
       padding: 20px 30px;
       color: black; }
+
+.services {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 100px 0; }
+  .services__heading h1 {
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px; }
+  .services__heading hr {
+    width: 40px;
+    border: 1px solid #f4623a; }
+  .services__container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    width: 90%; }
+    .services__container .service__container {
+      vertical-align: baseline;
+      margin: 40px 0px; }
+      .services__container .service__container .icon {
+        color: #f4623a;
+        font-weight: 900;
+        font-size: 64px;
+        font-line-height: 64; }
+      .services__container .service__container h1 {
+        font-family: "Merriweather Sans", sans-serif;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 29px; }
+      .services__container .service__container p {
+        font-family: "Merriweather Sans", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        opacity: .75; }
+
+.gallery {
+  background-color: #333940; }
+  .gallery__items {
+    display: flex;
+    flex-flow: row wrap; }
+    .gallery__items img {
+      width: 33.3333%; }
+  .gallery__info {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 0; }
+    .gallery__info h1 {
+      font-family: "Merriweather Sans", sans-serif;
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 38px;
+      color: white; }
+    .gallery__info a {
+      font-family: "Merriweather Sans", sans-serif;
+      color: black;
+      background-color: white;
+      padding: 20px;
+      border-radius: 50px;
+      margin-top: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 20px 30px; }
+
+.contacts {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 150px 0; }
+  .contacts__heading h1 {
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px; }
+  .contacts__heading hr {
+    width: 40px;
+    border: 1px solid #f4623a; }
+  .contacts__heading p {
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    opacity: .75; }
+  .contacts__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center; }
+    .contacts__container .contact {
+      padding: 20px 150px; }
+      .contacts__container .contact .icon {
+        color: #495057;
+        font-weight: 900;
+        font-size: 64px;
+        font-line-height: 64; }
+      .contacts__container .contact:nth-child(2) p {
+        color: #f4623a; }
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  padding: 30px 0; }
+  .footer p {
+    margin: auto 0; }
