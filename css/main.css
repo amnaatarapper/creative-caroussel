@@ -6921,6 +6921,16 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .footer {
+    background-color: red; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .footer {
+    background-color: blue; } }
+
 html {
   font-family: "Merriweather", sans-serif; }
 
@@ -7145,3 +7155,13 @@ html {
   padding: 30px 0; }
   .footer p {
     margin: auto 0; }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .footer {
+    background-color: red; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .footer {
+    background-color: blue; } }
