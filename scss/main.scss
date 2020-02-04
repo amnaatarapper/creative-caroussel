@@ -8,32 +8,32 @@
 
 html {
     font-family: $font;
+    font-size: 16px;
 }
 
 .navbar {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0);
     .navbar-brand {
         font-weight: 700;
-        color: $gray-700;
-        margin-left: 50px;
+        color: white;
+        padding-left: 3.125rem;
         &:hover {
-            color: white;
+            opacity: .75;
         }
     }
     
     #navbarNav {
         font-family: $font-sans;
         position: absolute;
-        right: 170px;
-    
+        right: 10.625rem;
         .nav-item {    
-            margin-left: 40px;
+            margin-left: 2.5rem;
             .nav-link {
-                color: $gray-700;
+                color: white;
                 margin: 0; 
                 padding: 0;
                 &:hover {
-                    color: white;
+                    opacity: .75;
                 }
             }
         }
@@ -48,6 +48,7 @@ html {
     text-align: center;
     color: #fff;
     height: 100vh;
+    text-align: center;
     background: url('/images/hero_bg.jpg');
     background: {
         repeat: no-repeat;
@@ -56,7 +57,6 @@ html {
         color: $brown;
         blend-mode: multiply;
     }
-    text-align: center;
 
     &__container {
         width: 70%;
@@ -64,13 +64,13 @@ html {
             @include header-big;
         }
         hr {
-           @include separator($orange, 100px);
+           @include separator($orange, 6.25rem);
         }
         p {
             font-family: $font;
             font-weight: 300;
-            font-size: 18px;
-            line-height: 28px;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
             opacity: .75;
         }
         a.btn {
@@ -89,22 +89,22 @@ html {
     color: white;
     &__container {
         width: 70%;
-        margin: 150px 0;
+        margin: 9.375rem 0;
         h1 {
             @include header-medium;
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
         hr {
-            @include separator(white, 100px);
-            margin-bottom: 30px;
+            @include separator(white, 6.25rem);
+            margin-bottom: 1.875rem;
         }
         p {
             font-family: $font;
             font-weight: 300;
-            font-size: 18px;
-            line-height: 28px;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
             opacity: .5;
-            margin-bottom: 30px;
+            margin-bottom: 1.875rem;
         }
         a.btn {
             @include btn(white, $orange);
@@ -119,13 +119,13 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 100px 0;
+    margin: 6.25rem 0;
     &__heading {
         h1 {
             @include header-medium;
         }
         hr {
-            @include separator($orange, 40px);
+            @include separator($orange, 2.5rem);
         }
     }
     &__container {
@@ -135,20 +135,20 @@ html {
         width: 90%;
         .service__container {
             vertical-align: baseline;
-            margin: 40px 0px;
+            margin: 2.5rem 0;
             .icon {
                 color: $orange;
                 font: {
                     weight: 900;
-                    size: 64px;
+                    size: 4rem;
                     line-height: 64;
                 }
             }
             h1 {
                 font-family: $font-sans;
                 font-weight: 500;
-                font-size: 24px;
-                line-height: 29px;
+                font-size: 1.5rem;
+                line-height: 1.8125rem;
             }
             p {
                 @include header-small;
@@ -173,7 +173,7 @@ html {
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 100px 0;
+        padding: 6.25rem 0;
         h1 {
             @include header-medium;
             color: white;
@@ -190,13 +190,13 @@ html {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 150px 0;
+    padding: 9.375rem 0;
     &__heading {
         h1 {
             @include header-medium;
         }
         hr {
-            @include separator($orange, 40px);
+            @include separator($orange, 2.5rem);
         }
         p {
             @include header-small;
@@ -209,12 +209,12 @@ html {
         justify-content: space-around;
         align-items: center;
         .contact {
-            padding: 20px 150px;
+            padding: 1.25rem 9.375rem;
             .icon {
                 color: $gray-700;
                 font: {
                     weight: 900;
-                    size: 64px;
+                    size: 4rem;
                     line-height: 64;
                 }
             }
@@ -230,23 +230,71 @@ html {
     align-items: center;
     justify-content: center;
     background-color: #f8f9fa;
-    padding: 30px 0;
+    padding: 1.875rem 0;
     & p {
         margin: auto 0;
     }
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .footer {
+
+// Responsive
+@include media-breakpoint-down(xs) {
+    body {
+        background-color: black;
+    }
+    .navbar {
+        .navbar-brand {
+            visibility: hidden;
+        }
+        #navbarNav {
+            position: static;
+        }
+    }
+    .hero {    
+        height: 100%;
+        &__container {
+            padding: 6.25rem 0;
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: .9rem;
+            }
+            a.btn {
+                font-size: .7rem;
+            }
+        }
+    }
+}
+@include media-breakpoint-up(sm) {
+    body {
         background-color: red;
     }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .footer {
-        background-color: blue;
+    .navbar {
+        #navbarNav {
+            position: static;
+        }
     }
+
+
 }
 
+
+
+
+
+// @include media-breakpoint-up(md) {
+//     body {
+//         background-color: blue;
+//     }
+// }
+// @include media-breakpoint-up(lg) {
+//     body {
+//         background-color: green;
+//     }
+// }
+// @include media-breakpoint-up(xl) {
+//     body {
+//         background-color: yellow;
+//     }
+// }
