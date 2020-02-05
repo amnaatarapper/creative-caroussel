@@ -1,38 +1,42 @@
 @mixin header-big {
     font-family: $font-sans;
     font-weight: 700;
-    font-size: 56px;
-    line-height: 67px;
+    font-size: 3.5rem;
+    line-height: 4.1875rem;
 };
 
 @mixin header-medium {
     font-family: $font-sans;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 2rem;
+    line-height: 2.375rem;
 };
 
 @mixin header-small {
     font-family: $font-sans;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
 };
 
-@mixin separator($color, $width: 100px) {
+@mixin separator($color, $width: 6.25rem) {
     width: $width;
-    border: 1px solid $color;
+    border: 0.0625rem solid $color;
 };
 
 @mixin btn($background-color, $color) {
     font-family: $font-sans;
     color: $color;
     background-color: $background-color;
-    padding: 20px;
-    border-radius: 50px;
-    margin-top: 20px;
+    padding: 1.25rem;
+    border-radius: 3.125rem;
+    margin-top: 1.25rem;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 14px;
-    padding: 20px 30px;
+    font-size: 0.875rem;
+    padding: 1.25rem 1.875rem;
+    text-decoration: none;
+    &:hover {
+        background-color: darken($background-color, 10);
+    }
 }

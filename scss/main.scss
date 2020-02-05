@@ -20,12 +20,16 @@ html {
         &:hover {
             opacity: .75;
         }
+        @include media-breakpoint-up(xs) {
+            visibility: hidden;
+        }
+        @include media-breakpoint-up(md) {
+            visibility: visible;
+        }
     }
     
     #navbarNav {
         font-family: $font-sans;
-        position: absolute;
-        right: 10.625rem;
         .nav-item {    
             margin-left: 2.5rem;
             .nav-link {
@@ -37,6 +41,13 @@ html {
                 }
             }
         }
+        @include media-breakpoint-up(xs) {
+            position: static;
+        }
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            right: 7rem;
+        }
     }
 }
 
@@ -47,7 +58,6 @@ html {
     align-items: center;
     text-align: center;
     color: #fff;
-    height: 100vh;
     text-align: center;
     background: url('/images/hero_bg.jpg');
     background: {
@@ -56,6 +66,12 @@ html {
         size: cover;
         color: $brown;
         blend-mode: multiply;
+    }
+    @include media-breakpoint-up(xs) {
+        height: 100%;
+    }
+    @include media-breakpoint-up(md) {
+        height: 100vh;
     }
 
     &__container {
@@ -75,6 +91,46 @@ html {
         }
         a.btn {
             @include btn($orange, white);
+        }
+        @include media-breakpoint-up(xs) {
+            padding: 6.25rem 0;
+            h1 {
+                font-size: 2.2rem;
+            }
+            p {
+                font-size: .9rem;
+            }
+            a.btn {
+                font-size: .6rem;
+            }
+        }
+        @include media-breakpoint-up(sm) {
+            h1 {
+                font-size: 2.7rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            a.btn {
+                font-size: .7rem;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            a.btn {
+                font-size: .9rem;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            h1 {
+                @include header-big;
+            }
+            p {
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+            }
+            a.btn {
+                @include btn($orange, white);
+            }
         }
     }
 }
@@ -110,7 +166,17 @@ html {
             @include btn(white, $orange);
             color: black;
         }
-    }
+        @include media-breakpoint-up(xs) {
+            a.btn {
+                font-size: .7rem;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            a.btn {
+                font-size: .9rem;
+            }
+        }
+    }   
 }
 
 .services {
@@ -131,9 +197,7 @@ html {
     }
     &__container {
         display: flex;
-        flex-flow: row nowrap;
         align-items: center;
-        width: 90%;
         .service__container {
             vertical-align: baseline;
             margin: 2.5rem 0;
@@ -156,6 +220,23 @@ html {
                 opacity: .75;
             }
         }
+        @include media-breakpoint-up(xs) {
+            flex-flow: column nowrap;
+            width: 80%;
+        }
+        @include media-breakpoint-up(md) {
+            flex-flow: row wrap;
+            width: 90%;
+            .service__container {
+                width: 50%;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            flex-flow: row wrap;
+            .service__container {
+                width: 25%;
+            }
+        }
     }
 }
 
@@ -167,6 +248,23 @@ html {
         img {
             width: 33.3333%;
         }
+        @include media-breakpoint-up(xs) {
+            flex-flow: column wrap;
+            img {
+                width: 100%;
+            }
+        }
+        @include media-breakpoint-up(sm) {
+            flex-flow: row wrap;
+            img {
+                width: 50%;
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            img {
+                width: 33%;
+            }
+        }
     }
     &__info {
         display:flex;
@@ -176,11 +274,37 @@ html {
         text-align: center;
         padding: 6.25rem 0;
         h1 {
-            @include header-medium;
             color: white;
         }
         a {
             @include btn(white, black);
+        }
+        
+        @include media-breakpoint-up(xs) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            a {
+                font-size: .6rem;
+            }
+        }
+        @include media-breakpoint-up(sm) {
+            h1 {
+                font-size: 2rem;
+            }
+            a {
+                font-size: .8rem;
+            }
+        }
+        @include media-breakpoint-up(md) {
+            a {
+                @include btn(white, black);
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            h1 {
+                @include header-medium;
+            }
         }
     }
 }
@@ -193,6 +317,11 @@ html {
     text-align: center;
     padding: 9.375rem 0;
     background-color: white;
+    @include media-breakpoint-up(xs) {
+        width: 100%;
+        padding: 3.125rem 3.125rem;
+        overflow: hidden;        
+    }
     &__heading {
         h1 {
             @include header-medium;
@@ -204,11 +333,20 @@ html {
             @include header-small;
             opacity: .75;
         }
+        @include media-breakpoint-up(xs) {
+            h1 {
+                font-size: 2.4rem;
+            }
+            p {
+                font-size: 1.1rem;
+            }
+            a.btn {
+                font-size: .9rem;
+            }
+        }
     }
     &__container {
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
         align-items: center;
         .contact {
             padding: 1.25rem 9.375rem;
@@ -223,7 +361,13 @@ html {
             &:nth-child(2) p {
                 color: $orange;
             }
-        }  
+        } 
+        @include media-breakpoint-up(xs) {
+            flex-direction: column;
+        }
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
     }
 }
 
@@ -236,195 +380,20 @@ html {
     & p {
         margin: auto 0;
     }
-}
-
-
-// Responsive
-@include media-breakpoint-down(xs) {
-    body {
-        background-color: black;
-    }
-    .navbar {
-        .navbar-brand {
-            visibility: hidden;
-        }
-        #navbarNav {
-            position: static;
-        }
-    }
-    .hero {    
-        height: 100%;
-        &__container {
-            padding: 6.25rem 0;
-            h1 {
-                font-size: 2.2rem;
-            }
-            p {
-                font-size: .9rem;
-            }
-            a.btn {
-                font-size: .7rem;
-            }
-        }
-    }
-    .services {
-        &__container {
-            flex-flow: column nowrap;
-            width: 50%;
-        }
-    }
-    .gallery {
-        &__items {
-            display: flex;
-            flex-flow: column wrap;
-            img {
-                width: 100%;
-            }
-        }
-    }
-    .contacts {
-        width: 100%;
-        padding: 3.125rem 3.125rem;
-        overflow: hidden;
-        &__heading {
-            h1 {
-                font-size: 2.4rem;
-            }
-            p {
-                font-size: 1.1rem;
-            }
-            a.btn {
-                font-size: .9rem;
-            }
-        }
-        &__container {
-            flex-direction: column;
-        }
-    }
-    .footer {
+    @include media-breakpoint-up(xs) {
         padding: 1rem 0;
         & p {
-            margin: auto 0;
+            font-size: .6rem;
         }
     }
-}
-
-@include media-breakpoint-only(sm) {
-    body {
-        background-color: red;
-    }
-    .navbar {
-        .navbar-brand {
-            visibility: hidden;
-        }
-        #navbarNav {
-            position: static;
-        }
-    }
-    .hero {    
-        height: 100%;
-        &__container {
-            padding: 6.25rem 0;
-            h1 {
-                font-size: 2.2rem;
-            }
-            p {
-                font-size: .9rem;
-            }
-            a.btn {
-                font-size: .7rem;
-            }
-        }
-    }
-    .services {
-        &__container {
-            flex-flow: row wrap;
-            .service__container {
-                width: 50%;
-            }
-        }
-    }
-    .gallery {
-        &__items {
-            display: flex;
-            flex-flow: row wrap;
-            img {
-                width: 50%;
-            }
-        }
-    }
-    .contacts {
-        width: 100%;
-        overflow: hidden;
-        &__container {
-            flex-direction: column;
-        }
-    }
-    .footer {
-        padding: 1rem 0;
+    @include media-breakpoint-up(md) {
         & p {
-            margin: auto 0;
+            font-size: .7rem;
         }
     }
-}
-
-@include media-breakpoint-only(md) {
-    body {
-        background-color: blue;
-    }
-    .navbar {
-        .navbar-brand {
-            visibility: visible;
-        }
-        #navbarNav {
-            position: absolute;
-            right: 170px;
-        }
-    }
-    .services {
-        &__container {
-            flex-flow: row wrap;
-            .service__container {
-                width: 25%;
-            }
-        }
-    }
-    .contacts {
-        width: 100%;
-        overflow: hidden;
-        &__container {
-            flex-direction: row;
-        }
-    }
-        
-}
-@include media-breakpoint-only(lg) {
-    body {
-        background-color: green;
-    }
-    .hero {
-        height: 100vh;
-    }
-    .gallery {
-        &__items {
-            display: flex;
-            flex-flow: row wrap;
-            img {
-                width: 33.3333%;
-            }
-        }
-    }
-}
-@include media-breakpoint-only(xl) {
-    body {
-        background-color: yellow;
-    }
-    .services {
-        &__container {
-            flex-flow: row wrap;
-            .service__container {
-                width: 25%;
-            }
+    @include media-breakpoint-up(lg) {
+        & p {
+            font-size: 1rem;
         }
     }
 }
