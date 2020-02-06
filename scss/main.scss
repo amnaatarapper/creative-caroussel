@@ -23,7 +23,7 @@ html {
         @include media-breakpoint-up(xs) {
             visibility: hidden;
         }
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(sm) {
             visibility: visible;
         }
     }
@@ -52,6 +52,7 @@ html {
 }
 
 .hero {
+    position: relative;
     display:flex;
     flex-flow: column;
     justify-content: center;
@@ -59,23 +60,12 @@ html {
     text-align: center;
     color: #fff;
     text-align: center;
-    background: url('/images/hero_bg.jpg');
-    background: {
-        repeat: no-repeat;
-        position: center;
-        size: cover;
-        color: $brown;
-        blend-mode: multiply;
-    }
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .5);
     @include media-breakpoint-up(xs) {
-        height: 100%;
-    }
-    @include media-breakpoint-up(md) {
         height: 100vh;
     }
-
-    &__container {
-        width: 70%;
+    &__container {  
         h1 {
             @include header-big;
         }
@@ -133,7 +123,29 @@ html {
             }
         }
     }
+
+    &__caroussel {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        height: 100%;
+        width: 100%;
+        .carousel {
+            .carousel-inner {
+                height: 100%;
+                .carousel-item {
+                    height: 100%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
 }
+
 
 .cta {
     display:flex;

@@ -6934,7 +6934,7 @@ html {
     visibility: hidden; }
     .navbar .navbar-brand:hover {
       opacity: .75; }
-    @media (min-width: 768px) {
+    @media (min-width: 576px) {
       .navbar .navbar-brand {
         visibility: visible; } }
   .navbar #navbarNav {
@@ -6954,6 +6954,7 @@ html {
         right: 7rem; } }
 
 .hero {
+  position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -6961,18 +6962,10 @@ html {
   text-align: center;
   color: #fff;
   text-align: center;
-  background: url("/images/hero_bg.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-color: #443a32;
-  background-blend-mode: multiply;
-  height: 100%; }
-  @media (min-width: 768px) {
-    .hero {
-      height: 100vh; } }
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh; }
   .hero__container {
-    width: 70%;
     padding: 6.25rem 0; }
     .hero__container h1 {
       font-family: "Merriweather Sans", sans-serif;
@@ -7041,6 +7034,20 @@ html {
         text-decoration: none; }
         .hero__container a.btn:hover {
           background-color: #ee3e0d; } }
+  .hero__caroussel {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%; }
+    .hero__caroussel .carousel .carousel-inner {
+      height: 100%; }
+      .hero__caroussel .carousel .carousel-inner .carousel-item {
+        height: 100%; }
+        .hero__caroussel .carousel .carousel-inner .carousel-item img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
 
 .cta {
   display: flex;
