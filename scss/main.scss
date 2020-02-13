@@ -266,11 +266,13 @@ p {
         padding-right: 0;
     }
     .imgs-container {
-        overflow: hidden;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+
         .img-container {
+            position: relative;
+            overflow: hidden;
             @include media-breakpoint-up(xs) {
                 width: 100%;
             }
@@ -280,10 +282,34 @@ p {
             @include media-breakpoint-up(lg) {
                 width: 33.33%;
             }
-            img {
-                height: 100%;
+            
+            .project {
+                position: absolute;
+                opacity: 0;
+                bottom: 0;
                 width: 100%;
-                object-fit: cover;
+                height: 100%;
+                background-color: transparentize(map-get($theme-colors, "primary"), .15);
+                transition: opacity .5s ease-in;
+            }
+            
+            a {
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: transform .3s;
+                    
+                }
+            }        
+
+            &:hover {
+                img {
+                    transform: scale(1.1);
+                }
+                .project {
+                   opacity: 1;
+                }
             }
         }
     }
