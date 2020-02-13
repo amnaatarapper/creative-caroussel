@@ -8,6 +8,11 @@
 @import "functions";
 @import "variables";
 @import "mixins";
+
+// Overrides
+@import "scss/vars";
+@import "scss/mixins";
+
 @import "root";
 @import "reboot";
 @import "type";

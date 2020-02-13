@@ -1,6 +1,71 @@
-
 // Variables
 $orange: #f4623a;
 $brown: #443a32;
+$light-black: #212529;
 $font: 'Merriweather', sans-serif;
 $font-sans: 'Merriweather Sans', sans-serif;
+
+// Theme
+$primary:       $orange;
+$secondary:     $white;
+$danger:        $red;
+$light:         rgba(255, 255, 255, 0.75);
+$dark:          $light-black;
+$overlay:       $brown;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark,
+    "overlay":      $overlay,
+  ),
+  $theme-colors
+);
+
+
+
+// Typography
+$font-family-sans-serif:      $font-sans;
+$font-family-base:            $font;
+
+$font-size-base:              1rem;
+$font-size-lg:                $font-size-base * 1.25;
+$font-size-sm:                $font-size-base * .875;
+
+$font-weight-lighter:         lighter;
+$font-weight-normal:          300;
+$font-weight-bold:            700;
+$font-weight-bolder:          bolder;
+
+$font-weight-base:            $font-weight-normal;
+
+$line-height-base:            1.5;
+$line-height-lg:              2;
+$line-height-sm:              1.25;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+
+// Components
+// Buttons
+$border-radius: 3rem;
+$btn-border-radius:           $border-radius;
+
+$btn-padding-y:               12px;
+$btn-padding-x:               20px;
+$btn-font-size:               $font-size-base * .6;
+
+$btn-padding-y-sm:            $btn-padding-y;
+$btn-padding-x-sm:            $btn-padding-x;
+$btn-font-size-sm:            $font-size-base * .6;
+
+$btn-padding-y-lg:            $btn-padding-y;
+$btn-padding-x-lg:            $btn-padding-x;
+$btn-font-size-lg:            $font-size-base * .8;
+
+// Col

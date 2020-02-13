@@ -1,144 +1,177 @@
 // Required
-@import "bootstrap/scss/bootstrap";
+@import "../bootstrap/scss/bootstrap.scss";
 
-// Imports
-@import "scss/vars";
-@import "scss/mixins";
-@import "scss/responsive";
+// ----------------------------------------
+// Globals
+// ----------------------------------------
 
 html {
-    font-family: $font;
-    font-size: 16px;
+    -webkit-scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-base;
+    font-size: $font-size-base;
+    color: map-get($theme-colors, "secondary");
+}
+h1 {
+    font-weight: $font-weight-bolder;
+    @include media-breakpoint-up(xs) {
+        font-size: 1.7rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+        font-size: 2rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: 2.3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 2.6rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: 2.9rem;
+    }
 }
 
-.navbar {
-    background-color: rgba(0, 0, 0, 0);
-    .navbar-brand {
-        font-weight: 700;
-        color: white;
-        padding-left: 3.125rem;
-        &:hover {
-            opacity: .75;
-        }
-        @include media-breakpoint-up(xs) {
-            visibility: hidden;
-        }
-        @include media-breakpoint-up(sm) {
-            visibility: visible;
-        }
+p {
+    font-family: $font-family-base;
+    @include media-breakpoint-up(xs) {
+        font-size: .6rem;
     }
-    
-    #navbarNav {
-        font-family: $font-sans;
-        .nav-item {    
-            margin-left: 2.5rem;
-            .nav-link {
-                color: white;
-                margin: 0; 
-                padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        font-size: .7rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        font-size: .9rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 1rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+        font-size: 1.2rem;
+    }
+}
+
+
+// ----------------------------------------
+// Page Home
+// ----------------------------------------
+
+// Page Home / Menu 
+// -------------------
+
+.menu {
+    width: 100%;
+    font-family: $font-family-sans-serif;
+    background-color: map-get($theme-colors, "dark");
+
+    .container {
+        .navbar {
+            .navbar-brand {
+                font-weight: $font-weight-bold;
+                color: inherit;
+
                 &:hover {
                     opacity: .75;
                 }
+
+                @include media-breakpoint-up(xs) {
+                    visibility: hidden;
+                }
+
+                @include media-breakpoint-up(sm) {
+                    visibility: visible;
+                }
             }
-        }
-        @include media-breakpoint-up(xs) {
-            position: static;
-        }
-        @include media-breakpoint-up(md) {
-            position: absolute;
-            right: 7rem;
+
+            .navbar-nav {
+                .nav-item {
+                    .nav-link {
+                        color: inherit;
+
+                        &:hover {
+                            opacity: .75;
+                        }
+                    }
+                }
+
+                @include media-breakpoint-up(xs) {
+                    position: static;
+                }
+
+                @include media-breakpoint-up(md) {
+                    position: absolute;
+                    right: 2rem;
+                }
+            }
         }
     }
 }
 
+// Page Home / Hero 
+// -------------------
 .hero {
     position: relative;
-    display:flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    text-align: center;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, .5);
-    @include media-breakpoint-up(xs) {
-        height: 100vh;
-    }
-    &__container {  
-        h1 {
-            @include header-big;
-        }
-        hr {
-           @include separator($orange, 6.25rem);
-        }
-        p {
-            font-family: $font;
-            font-weight: 300;
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-            opacity: .75;
-        }
-        a.btn {
-            @include btn($orange, white);
-        }
-        @include media-breakpoint-up(xs) {
-            padding: 6.25rem 0;
-            h1 {
-                font-size: 2.2rem;
-            }
-            p {
-                font-size: .9rem;
-            }
-            a.btn {
-                font-size: .6rem;
-            }
-        }
-        @include media-breakpoint-up(sm) {
-            h1 {
-                font-size: 2.7rem;
-            }
-            p {
-                font-size: 1rem;
-            }
-            a.btn {
-                font-size: .7rem;
-            }
-        }
-        @include media-breakpoint-up(md) {
-            a.btn {
-                font-size: .9rem;
-            }
-        }
-        @include media-breakpoint-up(lg) {
-            h1 {
-                @include header-big;
-            }
-            p {
-                font-size: 1.125rem;
-                line-height: 1.75rem;
-            }
-            a.btn {
-                @include btn($orange, white);
-            }
-        }
-    }
+    height: 100vh;
 
-    &__caroussel {
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        height: 100%;
-        width: 100%;
-        .carousel {
-            .carousel-inner {
+    .container-fluid {
+        .caroussel {
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                width: 100%;
                 height: 100%;
-                .carousel-item {
-                    height: 100%;
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
+                background-color: transparentize(map-get($theme-colors, "overlay"), .25);
+                z-index: 999;
+            }
+
+            .carousel {
+                height: inherit;
+
+                .carousel-inner {
+                    height: inherit;
+
+                    .carousel-item {
+                        height: inherit;
+                        z-index: auto !important;
+
+                        img {
+                            position: absolute;
+                            bottom: 0;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        .container {
+                            height: 100%;
+
+                            .row {
+                                height: 100%;
+
+                                .col-10 {
+                                    flex: none;
+                                }
+
+                                .content {
+                                    z-index: 9999;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -146,241 +179,190 @@ html {
     }
 }
 
-
+// Page Home / CTA 
+// -------------------
 .cta {
-    display:flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: $orange;
-    color: white;
-    &__container {
-        width: 70%;
-        margin: 9.375rem 0;
+    background-color: map-get($theme-colors, "primary");
+    .container {
         h1 {
-            @include header-medium;
-            margin-bottom: 1.875rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        hr {
-            @include separator(white, 6.25rem);
-            margin-bottom: 1.875rem;
-        }
-        p {
-            font-family: $font;
-            font-weight: 300;
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-            opacity: .5;
-            margin-bottom: 1.875rem;
-        }
-        a.btn {
-            @include btn(white, $orange);
-            color: black;
-        }
-        @include media-breakpoint-up(xs) {
-            a.btn {
-                font-size: .7rem;
-            }
-        }
-        @include media-breakpoint-up(md) {
-            a.btn {
-                font-size: .9rem;
-            }
-        }
-    }   
-}
 
-.services {
-    display:flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 6.25rem 0;
-    background-color: white;
-    &__heading {
-        h1 {
-            @include header-medium;
-        }
-        hr {
-            @include separator($orange, 2.5rem);
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 1px;
+            background-color: map-get($theme-colors, "secondary");
+            margin: .5em 0;
         }
     }
-    &__container {
-        display: flex;
-        align-items: center;
-        .service__container {
-            vertical-align: baseline;
-            margin: 2.5rem 0;
-            .icon {
-                color: $orange;
-                font: {
-                    weight: 900;
-                    size: 4rem;
-                    line-height: 64;
-                }
-            }
-            h1 {
-                font-family: $font-sans;
-                font-weight: 500;
-                font-size: 1.5rem;
-                line-height: 1.8125rem;
-            }
-            p {
-                @include header-small;
-                opacity: .75;
-            }
+}
+
+
+// Page Home / Services 
+// -------------------
+.services {
+    color: map-get($theme-colors, "dark");
+    overflow: hidden;
+    &__heading {
+        h1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        @include media-breakpoint-up(xs) {
-            flex-flow: column nowrap;
-            width: 80%;
+
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 1px;
+            background-color: map-get($theme-colors, "primary");
+            margin: .5em 0;
         }
-        @include media-breakpoint-up(md) {
-            flex-flow: row wrap;
-            width: 90%;
-            .service__container {
-                width: 50%;
+    }
+    .service__container {
+        color: map-get($theme-colors, "dark");
+        font-size: 1rem;
+        h1 {
+            font-weight: $font-weight-base;
+            @include media-breakpoint-up(xs) {
+                font-size: 1rem;
             }
+        
+            @include media-breakpoint-up(sm) {
+                font-size: 1.3rem;
+            }
+        
+            @include media-breakpoint-up(md) {
+                font-size: 1.6rem;
+            }
+        
+            @include media-breakpoint-up(lg) {
+                font-size: 1.9rem;
+            }
+        
+            @include media-breakpoint-up(xl) {
+                font-size: 2.2rem;
+            }  
         }
-        @include media-breakpoint-up(lg) {
-            flex-flow: row wrap;
-            .service__container {
-                width: 25%;
+        .icon {
+            color: map-get($theme-colors, "primary");
+            font: {
+                weight: 900;
+                size: 2.5rem;
+                line-height: 64;
             }
         }
     }
 }
 
 .gallery {
-    background-color: #333940;
-    &__items {
+    background-color: map-get($theme-colors, "dark");
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .imgs-container {
+        overflow: hidden;
+        width: 100%;
         display: flex;
-        flex-flow: row wrap;
-        img {
-            width: 33.3333%;
-        }
-        @include media-breakpoint-up(xs) {
-            flex-flow: column wrap;
-            img {
+        flex-wrap: wrap;
+        .img-container {
+            @include media-breakpoint-up(xs) {
                 width: 100%;
             }
-        }
-        @include media-breakpoint-up(sm) {
-            flex-flow: row wrap;
-            img {
+            @include media-breakpoint-up(md) {
                 width: 50%;
             }
-        }
-        @include media-breakpoint-up(lg) {
+            @include media-breakpoint-up(lg) {
+                width: 33.33%;
+            }
             img {
-                width: 33%;
-            }
-        }
-    }
-    &__info {
-        display:flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 6.25rem 0;
-        h1 {
-            color: white;
-        }
-        a {
-            @include btn(white, black);
-        }
-        
-        @include media-breakpoint-up(xs) {
-            h1 {
-                font-size: 1.6rem;
-            }
-            a {
-                font-size: .6rem;
-            }
-        }
-        @include media-breakpoint-up(sm) {
-            h1 {
-                font-size: 2rem;
-            }
-            a {
-                font-size: .8rem;
-            }
-        }
-        @include media-breakpoint-up(md) {
-            a {
-                @include btn(white, black);
-            }
-        }
-        @include media-breakpoint-up(lg) {
-            h1 {
-                @include header-medium;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
             }
         }
     }
 }
 
 .contacts {
-    display:flex;
+    display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 9.375rem 0;
+    padding: 9.375rem 0 0 0;
     background-color: white;
+
     @include media-breakpoint-up(xs) {
         width: 100%;
         padding: 3.125rem 3.125rem;
-        overflow: hidden;        
+        overflow: hidden;
     }
+
     &__heading {
         h1 {
             @include header-medium;
         }
+
         hr {
             @include separator($orange, 2.5rem);
         }
+
         p {
             @include header-small;
             opacity: .75;
         }
+
         @include media-breakpoint-up(xs) {
             h1 {
                 font-size: 2.4rem;
             }
+
             p {
                 font-size: 1.1rem;
             }
-            a.btn {
-                font-size: .9rem;
-            }
         }
     }
+
     &__container {
         display: flex;
         align-items: center;
+
         .contact {
             padding: 1.25rem 9.375rem;
+
             .icon {
                 color: $gray-700;
+
                 font: {
                     weight: 900;
                     size: 4rem;
                     line-height: 64;
                 }
             }
+
             &:nth-child(2) p {
                 color: $orange;
             }
-        } 
+        }
+
         @include media-breakpoint-up(xs) {
             flex-direction: column;
         }
+
         @include media-breakpoint-up(md) {
             flex-direction: row;
         }
     }
+}
+
+.form {
+    padding: 0 0 1rem 0;
 }
 
 .footer {
@@ -389,20 +371,25 @@ html {
     justify-content: center;
     background-color: #f8f9fa;
     padding: 1.875rem 0;
+
     & p {
         margin: auto 0;
     }
+
     @include media-breakpoint-up(xs) {
         padding: 1rem 0;
+
         & p {
             font-size: .6rem;
         }
     }
+
     @include media-breakpoint-up(md) {
         & p {
             font-size: .7rem;
         }
     }
+
     @include media-breakpoint-up(lg) {
         & p {
             font-size: 1rem;

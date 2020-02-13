@@ -24,19 +24,3 @@
     border: 0.0625rem solid $color;
 };
 
-@mixin btn($background-color, $color) {
-    font-family: $font-sans;
-    color: $color;
-    background-color: $background-color;
-    padding: 1.25rem;
-    border-radius: 3.125rem;
-    margin-top: 1.25rem;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 0.875rem;
-    padding: 1.25rem 1.875rem;
-    text-decoration: none;
-    &:hover {
-        background-color: darken($background-color, 10);
-    }
-}
