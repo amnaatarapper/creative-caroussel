@@ -9,14 +9,17 @@ html {
     -webkit-scroll-behavior: smooth;
     scroll-behavior: smooth;
 }
+
 body {
     font-family: $font-family-sans-serif;
     line-height: $line-height-base;
     font-size: $font-size-base;
     color: map-get($theme-colors, "secondary");
 }
+
 h1 {
     font-weight: $font-weight-bolder;
+
     @include media-breakpoint-up(xs) {
         font-size: 1.7rem;
     }
@@ -40,6 +43,7 @@ h1 {
 
 p {
     font-family: $font-family-base;
+
     @include media-breakpoint-up(xs) {
         font-size: .6rem;
     }
@@ -183,6 +187,7 @@ p {
 // -------------------
 .cta {
     background-color: map-get($theme-colors, "primary");
+
     .container {
         h1 {
             display: flex;
@@ -194,7 +199,7 @@ p {
             content: "";
             display: block;
             width: 100px;
-            height: 1px;
+            height: 2px;
             background-color: map-get($theme-colors, "secondary");
             margin: .5em 0;
         }
@@ -207,6 +212,7 @@ p {
 .services {
     color: map-get($theme-colors, "dark");
     overflow: hidden;
+
     &__heading {
         h1 {
             display: flex;
@@ -218,38 +224,44 @@ p {
             content: "";
             display: block;
             width: 100px;
-            height: 1px;
+            height: 2px;
             background-color: map-get($theme-colors, "primary");
             margin: .5em 0;
         }
     }
+
     .service__container {
         color: map-get($theme-colors, "dark");
         font-size: 1rem;
+        width: 100%;
+
         h1 {
             font-weight: $font-weight-base;
+
             @include media-breakpoint-up(xs) {
                 font-size: 1rem;
             }
-        
+
             @include media-breakpoint-up(sm) {
                 font-size: 1.3rem;
             }
-        
+
             @include media-breakpoint-up(md) {
                 font-size: 1.6rem;
             }
-        
+
             @include media-breakpoint-up(lg) {
                 font-size: 1.9rem;
             }
-        
+
             @include media-breakpoint-up(xl) {
                 font-size: 2.2rem;
-            }  
+            }
         }
+
         .icon {
             color: map-get($theme-colors, "primary");
+
             font: {
                 weight: 900;
                 size: 2.5rem;
@@ -259,30 +271,36 @@ p {
     }
 }
 
+
+
+// Page Home / GALLERY 
+// -------------------
 .gallery {
     background-color: map-get($theme-colors, "dark");
+    overflow: hidden;
     .container-fluid {
         padding-left: 0;
         padding-right: 0;
     }
     .imgs-container {
-        width: 100%;
         display: flex;
         flex-wrap: wrap;
-
         .img-container {
             position: relative;
             overflow: hidden;
+
             @include media-breakpoint-up(xs) {
                 width: 100%;
             }
+
             @include media-breakpoint-up(md) {
                 width: 50%;
             }
+
             @include media-breakpoint-up(lg) {
                 width: 33.33%;
             }
-            
+
             .project {
                 position: absolute;
                 opacity: 0;
@@ -291,106 +309,82 @@ p {
                 height: 100%;
                 background-color: transparentize(map-get($theme-colors, "primary"), .15);
                 transition: opacity .5s ease-in;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                i {
+                    opacity: 0;
+                    font-size: 50px;
+                    color: map-get($theme-colors, "secondary");
+                    transform: scale(.2);
+                    transition: opacity 1s, transform 1s;
+                }
             }
-            
+
             a {
                 img {
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
-                    transition: transform .3s;
-                    
+                    transition: transform 3s;
                 }
-            }        
+            }
 
             &:hover {
                 img {
-                    transform: scale(1.1);
+                    transform: scale(1.4);
                 }
+
                 .project {
-                   opacity: 1;
+                    opacity: 1;
+                    i {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
                 }
             }
         }
     }
 }
 
+// Page Home / CONTACTS 
+// -------------------
 .contacts {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 9.375rem 0 0 0;
-    background-color: white;
+    color: map-get($theme-colors, "dark");
+    overflow-x: hidden;
+    background-color: lighten(map-get($theme-colors, "dark"), $amount: 80);
 
-    @include media-breakpoint-up(xs) {
-        width: 100%;
-        padding: 3.125rem 3.125rem;
-        overflow: hidden;
-    }
-
-    &__heading {
+    .contacts__heading {
         h1 {
-            @include header-medium;
-        }
-
-        hr {
-            @include separator($orange, 2.5rem);
-        }
-
-        p {
-            @include header-small;
-            opacity: .75;
-        }
-
-        @include media-breakpoint-up(xs) {
-            h1 {
-                font-size: 2.4rem;
-            }
-
-            p {
-                font-size: 1.1rem;
-            }
-        }
-    }
-
-    &__container {
-        display: flex;
-        align-items: center;
-
-        .contact {
-            padding: 1.25rem 9.375rem;
-
-            .icon {
-                color: $gray-700;
-
-                font: {
-                    weight: 900;
-                    size: 4rem;
-                    line-height: 64;
-                }
-            }
-
-            &:nth-child(2) p {
-                color: $orange;
-            }
-        }
-
-        @include media-breakpoint-up(xs) {
+            display: flex;
             flex-direction: column;
+            align-items: center;
         }
-
-        @include media-breakpoint-up(md) {
-            flex-direction: row;
+        h1::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 2px;
+            background-color: map-get($theme-colors, "dark");
+            margin: .5em 0;
         }
     }
+
+    .contact-item {
+        span {
+            font-size: 3rem;
+        }
+}
 }
 
 .form {
-    padding: 0 0 1rem 0;
+    background-color: lighten(map-get($theme-colors, "dark"), $amount: 80);
 }
 
+
+// Page Home / FOOTER 
+// -------------------
 .footer {
     display: flex;
     align-items: center;
