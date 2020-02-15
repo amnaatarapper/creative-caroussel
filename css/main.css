@@ -4,6 +4,15 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.hero, .cta, .services, .gallery, .contacts {
+  font-size: 1rem; }
+  .hero h1, .cta h1, .services h1, .gallery h1, .contacts h1 {
+    font-size: 1.5em; }
+  .hero p, .cta p, .services p, .gallery p, .contacts p {
+    font-size: .7em; }
+  .hero a, .cta a, .services a, .gallery a, .contacts a {
+    font-size: .6em; }
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -3338,7 +3347,7 @@ input[type="button"].btn-block {
 .pagination-lg .page-link {
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;
-  line-height: 2; }
+  line-height: 1.5; }
 
 .pagination-lg .page-item:first-child .page-link {
   border-top-left-radius: 0.3rem;
@@ -3351,7 +3360,7 @@ input[type="button"].btn-block {
 .pagination-sm .page-link {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
-  line-height: 1.25; }
+  line-height: 1.5; }
 
 .pagination-sm .page-item:first-child .page-link {
   border-top-left-radius: 0.2rem;
@@ -6711,7 +6720,21 @@ a.text-overlay:hover, a.text-overlay:focus {
 
 html {
   -webkit-scroll-behavior: smooth;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-size: 16px;
+  font-size: 16px; }
+  @media (min-width: 576px) {
+    html {
+      font-size: 18px; } }
+  @media (min-width: 768px) {
+    html {
+      font-size: 20px; } }
+  @media (min-width: 992px) {
+    html {
+      font-size: 24px; } }
+  @media (min-width: 1200px) {
+    html {
+      font-size: 28px; } }
 
 body {
   font-family: "Merriweather Sans", sans-serif;
@@ -6720,45 +6743,21 @@ body {
   color: #fff; }
 
 h1 {
-  font-weight: bolder;
-  font-size: 1.7rem; }
-  @media (min-width: 576px) {
-    h1 {
-      font-size: 2rem; } }
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 2.3rem; } }
-  @media (min-width: 992px) {
-    h1 {
-      font-size: 2.6rem; } }
-  @media (min-width: 1200px) {
-    h1 {
-      font-size: 2.9rem; } }
+  font-weight: bolder; }
 
 p {
-  font-family: "Merriweather", sans-serif;
-  font-size: .6rem; }
-  @media (min-width: 576px) {
-    p {
-      font-size: .7rem; } }
-  @media (min-width: 768px) {
-    p {
-      font-size: .9rem; } }
-  @media (min-width: 992px) {
-    p {
-      font-size: 1rem; } }
-  @media (min-width: 1200px) {
-    p {
-      font-size: 1.2rem; } }
+  font-family: "Merriweather", sans-serif; }
 
 .menu {
   width: 100%;
   font-family: "Merriweather Sans", sans-serif;
   z-index: 1500;
-  transition: background-color 1s ease;
-  background-color: rgba(33, 37, 41, 0.9); }
+  transition: background-color .5s ease, padding .8s ease-in, font-size .7s;
+  background-color: #212529;
+  font-size: .5rem; }
   .menu .container .navbar .navbar-brand {
     font-weight: 700;
+    font-size: 1.2em;
     color: inherit;
     visibility: hidden; }
     .menu .container .navbar .navbar-brand:hover {
@@ -6769,17 +6768,20 @@ p {
   .menu .container .navbar .navbar-nav {
     position: static; }
     .menu .container .navbar .navbar-nav .nav-item .nav-link {
-      color: inherit; }
+      color: inherit;
+      font-size: 1em; }
       .menu .container .navbar .navbar-nav .nav-item .nav-link:hover {
         opacity: .75; }
     @media (min-width: 768px) {
       .menu .container .navbar .navbar-nav {
         position: absolute;
-        right: 2rem; } }
+        right: 2em; } }
 
 .fixed-top {
   background-color: rgba(33, 37, 41, 0.95);
-  color: #f4623a; }
+  color: #f4623a;
+  padding: 0;
+  font-size: .6em; }
 
 .hero {
   position: relative;
@@ -6834,6 +6836,8 @@ p {
 .services {
   color: #212529;
   overflow: hidden; }
+  .services h1 {
+    font-size: 1.2em; }
   .services__heading h1 {
     display: flex;
     flex-direction: column;
@@ -6847,27 +6851,11 @@ p {
     margin: .5em 0; }
   .services .service__container {
     color: #212529;
-    font-size: 1rem;
     width: 100%; }
-    .services .service__container h1 {
-      font-weight: 300;
-      font-size: 1rem; }
-      @media (min-width: 576px) {
-        .services .service__container h1 {
-          font-size: 1.3rem; } }
-      @media (min-width: 768px) {
-        .services .service__container h1 {
-          font-size: 1.6rem; } }
-      @media (min-width: 992px) {
-        .services .service__container h1 {
-          font-size: 1.9rem; } }
-      @media (min-width: 1200px) {
-        .services .service__container h1 {
-          font-size: 2.2rem; } }
     .services .service__container .icon {
       color: #f4623a;
       font-weight: 900;
-      font-size: 2.5rem;
+      font-size: 2em;
       font-line-height: 64; }
 
 .gallery {
@@ -6940,21 +6928,9 @@ p {
 
 .form {
   background-color: #eff1f3; }
+  .form label {
+    font-size: .7rem; }
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f8f9fa;
-  padding: 1.875rem 0;
-  padding: 1rem 0; }
-  .footer p {
-    margin: auto 0; }
-  .footer p {
-    font-size: .6rem; }
-  @media (min-width: 768px) {
-    .footer p {
-      font-size: .7rem; } }
-  @media (min-width: 992px) {
-    .footer p {
-      font-size: 1rem; } }
+  background-color: #212529;
+  font-size: .7rem; }

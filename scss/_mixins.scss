@@ -1,26 +1,12 @@
-@mixin header-big {
-    font-family: $font-sans;
-    font-weight: 700;
-    font-size: 3.5rem;
-    line-height: 4.1875rem;
-};
-
-@mixin header-medium {
-    font-family: $font-sans;
-    font-weight: 500;
-    font-size: 2rem;
-    line-height: 2.375rem;
-};
-
-@mixin header-small {
-    font-family: $font-sans;
-    font-weight: 400;
+%section {
     font-size: 1rem;
-    line-height: 1.5rem;
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: .7em;
+    }
+    a {
+        font-size: .6em;
+    }
 };
-
-@mixin separator($color, $width: 6.25rem) {
-    width: $width;
-    border: 0.0625rem solid $color;
-};
-
