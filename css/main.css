@@ -6757,7 +6757,7 @@ p {
   font-size: .5rem; }
   .menu .container .navbar .navbar-brand {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 1.6em;
     color: inherit;
     visibility: hidden; }
     .menu .container .navbar .navbar-brand:hover {
@@ -6769,7 +6769,7 @@ p {
     position: static; }
     .menu .container .navbar .navbar-nav .nav-item .nav-link {
       color: inherit;
-      font-size: 1em; }
+      font-size: 1.2em; }
       .menu .container .navbar .navbar-nav .nav-item .nav-link:hover {
         opacity: .75; }
     @media (min-width: 768px) {
@@ -6781,7 +6781,7 @@ p {
   background-color: rgba(33, 37, 41, 0.95);
   color: #f4623a;
   padding: 0;
-  font-size: .6em; }
+  font-size: .45em; }
 
 .hero {
   position: relative;
@@ -6870,6 +6870,7 @@ p {
     .gallery .imgs-container .img-container {
       position: relative;
       overflow: hidden;
+      max-height: 85vh;
       width: 100%; }
       @media (min-width: 768px) {
         .gallery .imgs-container .img-container {
@@ -6929,8 +6930,8 @@ p {
 .form {
   background-color: #eff1f3; }
   .form label {
-    font-size: .7rem; }
+    font-size: .6rem; }
 
 .footer {
   background-color: #212529;
-  font-size: .7rem; }
+  font-size: .6rem; }
