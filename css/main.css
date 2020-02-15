@@ -6754,7 +6754,9 @@ p {
 .menu {
   width: 100%;
   font-family: "Merriweather Sans", sans-serif;
-  background-color: #212529; }
+  z-index: 1500;
+  transition: background-color 1s ease;
+  background-color: rgba(33, 37, 41, 0.9); }
   .menu .container .navbar .navbar-brand {
     font-weight: 700;
     color: inherit;
@@ -6775,6 +6777,10 @@ p {
         position: absolute;
         right: 2rem; } }
 
+.fixed-top {
+  background-color: rgba(33, 37, 41, 0.95);
+  color: #f4623a; }
+
 .hero {
   position: relative;
   height: 100vh; }
@@ -6789,8 +6795,7 @@ p {
       bottom: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(68, 58, 50, 0.75);
-      z-index: 999; }
+      background-color: rgba(68, 58, 50, 0.75); }
     .hero .container-fluid .caroussel .carousel {
       height: inherit; }
       .hero .container-fluid .caroussel .carousel .carousel-inner {
@@ -6810,7 +6815,7 @@ p {
               .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container .row .col-10 {
                 flex: none; }
               .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container .row .content {
-                z-index: 9999; }
+                z-index: 999; }
 
 .cta {
   background-color: #f4623a; }
