@@ -1,19 +1,4 @@
-%section {
-    font-size: 1rem;
-    h1 {
-        font-size: 1.5em;
-    }
-    p {
-        font-size: .7em;
-    }
-    a {
-        font-size: .6em;
-    }
-};
-
-
-
-@mixin toggle-switch($size: 1rem, $color1: #d3d6d8, $color2: #3556ec) {
+@mixin toggle-switch($size: 20px, $color1: #d3d6d8, $color2: #3556ec) {
     .toggle-switch {
         // HTML
         // <div class="toggle-switch">
@@ -21,7 +6,7 @@
         //     <input type="checkbox">
         //     <span class="slider slider--round"></span>
         //     </label>
-        // </div>        
+        // </div> 
         .switch {
             position: relative;
             width: $size * 2;
@@ -35,9 +20,7 @@
                     background-color: darken($color1, 17%);
                 }
                 &:checked + .slider::before {
-                    // transform: translateX($size * 2 - ($size * .8 + (($size * .8) / 2) - $size * .2));
-                    transform: translateX(98%);
-                    border: 2px solid darken($color1, 17%);
+                    transform: translateX($size * 2 - ($size * .8 + (($size * .8) / 2) - $size * .2));
                     background-color: $color2;                    
                 }
             }
@@ -54,13 +37,11 @@
                 &:before {
                     position: absolute;
                     content: "";
-                    // height: $size * .8 !important;
-                    // width: $size * .8 !important;
-                    height: $size;
-                    width: $size;
-                    // left: $size * .1 !important;
-                    // bottom: $size * .1 !important;
-                    border: 2px solid $color1;
+                    height: $size * .8 !important;
+                    width: $size * .8 !important;
+                    left: $size * .1 !important;
+                    bottom: $size * .1 !important;
+                    
                     background-color: darken($color1, 25%);
                     transition: .1s ease-in-out;
                 }

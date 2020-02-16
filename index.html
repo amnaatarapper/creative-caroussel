@@ -242,6 +242,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-xs-12 col-sm-8 col-md-6 text-primary">
           <form>
+            
             <div class="form-group">
               <label for="email">Email address</label>
               <div class="input-group mb-2 mr-sm-2">
@@ -271,8 +272,45 @@
               </div>
               <div class="form-group">
                 <label for="textarea">Message</label>
-                <textarea class="form-control" id="textarea" rows="3" ></textarea>
+                <textarea class="form-control" id="textarea" rows="5" ></textarea>
               </div>
+
+              <div class="form-group">
+                <label for="radio-group">How would you like to get an answer from us? :</label>
+                <div id="radio-group">
+                  <div class="radio-switch mb-1">
+                    <label class="switch">
+                      <input type="radio" id="contactChoice1" name="contact" value="email"> 
+                      <span class="inner"></span>
+                    </label>
+                    <label class="">Email</label>
+                  </div>
+                  <div class="radio-switch">
+                    <label class="switch">
+                      <input type="radio" id="contactChoice2" name="contact" value="phone"> 
+                      <span class="inner"></span>
+                    </label>
+                    <label class="">Phone</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                    <div class="toggle-switch">
+                      <label class="d-block">Lorem ipsum dolor sit amet consectetur adipisicing elit?</label>
+                      <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider slider--round"></span>
+                      </label>
+                    </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                
+              </div>
+
               <div class="col-12 text-right">
                 <button type="submit" class="btn btn-primary">Send</button>
               </div>
