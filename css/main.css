@@ -6822,6 +6822,11 @@ p {
                 flex: none; }
               .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container .row .content {
                 z-index: 999; }
+          .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .carousel-control-prev, .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .carousel-control-next {
+            top: 50%;
+            bottom: 0;
+            width: 5%;
+            transform: translateY(-50%); }
 
 .cta {
   background-color: #f4623a; }

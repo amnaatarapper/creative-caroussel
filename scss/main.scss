@@ -145,7 +145,7 @@ p {
                     .carousel-item {
                         height: inherit;
                         z-index: auto !important;
-
+                        
                         img {
                             position: absolute;
                             bottom: 0;
@@ -168,9 +168,17 @@ p {
                                 }
                             }
                         }
+                        .carousel-control-prev, .carousel-control-next {
+                            top: 50%;
+                            bottom: 0;
+                            width: 5%;
+                            transform: translateY(-50%);
+                        }
                     }
                 }
             }
+
+            
         }
     }
 }
