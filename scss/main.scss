@@ -6,7 +6,6 @@
 // ----------------------------------------
 
 html {
-    -webkit-scroll-behavior: smooth;
     scroll-behavior: smooth;
     font-size: 16px;
     @include media-breakpoint-up(xs) {
@@ -55,12 +54,16 @@ p {
     width: 100%;
     font-family: $font-family-sans-serif;
     z-index: 1500;
-    transition: background-color .5s ease, padding .8s ease-in, font-size .7s;
+    transition: background-color .5s ease-in, padding 1s ease-in, font-size .7s ease-out;
     background-color: map-get($theme-colors, "dark");
     font-size: .5rem;
-
+    padding: 10px 0;
     .container {
         .navbar {
+            padding: 0;
+            button {
+                border-color: transparent;
+            }
             .navbar-brand {
                 font-weight: $font-weight-bold;
                 font-size: 1.6em;
@@ -73,7 +76,6 @@ p {
                 @include media-breakpoint-up(xs) {
                     visibility: hidden;
                 }
-
                 @include media-breakpoint-up(sm) {
                     visibility: visible;
                 }
@@ -83,7 +85,7 @@ p {
                 .nav-item {
                     .nav-link {
                         color: inherit;
-                        font-size: 1.2em;
+                        font-size: 1.15em;
 
                         &:hover {
                             opacity: .75;
@@ -105,10 +107,10 @@ p {
 }
 // On scroll
 .fixed-top {
-    background-color: transparentize(map-get($theme-colors, "dark"), $amount: .05);
+    font-size: .45em;
+    background-color: transparentize(map-get($theme-colors, "dark"), $amount: .1);
     color: map-get($theme-colors, "primary");
     padding: 0;
-    font-size: .45em;
 }
 
 // Page Home / Hero 
@@ -354,7 +356,12 @@ p {
 
 .form {
     background-color: lighten(map-get($theme-colors, "dark"), $amount: 80);
-
+    .input-group-text {
+        padding: 0 .3rem;
+    }
+    .form-control {
+        height: 1.6rem;
+    }
     label {
         font-size: .6rem;
     }

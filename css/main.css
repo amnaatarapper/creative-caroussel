@@ -6719,7 +6719,6 @@ a.text-overlay:hover, a.text-overlay:focus {
     border-color: #dee2e6; } }
 
 html {
-  -webkit-scroll-behavior: smooth;
   scroll-behavior: smooth;
   font-size: 16px;
   font-size: 16px; }
@@ -6752,36 +6751,41 @@ p {
   width: 100%;
   font-family: "Merriweather Sans", sans-serif;
   z-index: 1500;
-  transition: background-color .5s ease, padding .8s ease-in, font-size .7s;
+  transition: background-color .5s ease-in, padding 1s ease-in, font-size .7s ease-out;
   background-color: #212529;
-  font-size: .5rem; }
-  .menu .container .navbar .navbar-brand {
-    font-weight: 700;
-    font-size: 1.6em;
-    color: inherit;
-    visibility: hidden; }
-    .menu .container .navbar .navbar-brand:hover {
-      opacity: .75; }
-    @media (min-width: 576px) {
-      .menu .container .navbar .navbar-brand {
-        visibility: visible; } }
-  .menu .container .navbar .navbar-nav {
-    position: static; }
-    .menu .container .navbar .navbar-nav .nav-item .nav-link {
+  font-size: .5rem;
+  padding: 10px 0; }
+  .menu .container .navbar {
+    padding: 0; }
+    .menu .container .navbar button {
+      border-color: transparent; }
+    .menu .container .navbar .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6em;
       color: inherit;
-      font-size: 1.2em; }
-      .menu .container .navbar .navbar-nav .nav-item .nav-link:hover {
+      visibility: hidden; }
+      .menu .container .navbar .navbar-brand:hover {
         opacity: .75; }
-    @media (min-width: 768px) {
-      .menu .container .navbar .navbar-nav {
-        position: absolute;
-        right: 2em; } }
+      @media (min-width: 576px) {
+        .menu .container .navbar .navbar-brand {
+          visibility: visible; } }
+    .menu .container .navbar .navbar-nav {
+      position: static; }
+      .menu .container .navbar .navbar-nav .nav-item .nav-link {
+        color: inherit;
+        font-size: 1.15em; }
+        .menu .container .navbar .navbar-nav .nav-item .nav-link:hover {
+          opacity: .75; }
+      @media (min-width: 768px) {
+        .menu .container .navbar .navbar-nav {
+          position: absolute;
+          right: 2em; } }
 
 .fixed-top {
-  background-color: rgba(33, 37, 41, 0.95);
+  font-size: .45em;
+  background-color: rgba(33, 37, 41, 0.9);
   color: #f4623a;
-  padding: 0;
-  font-size: .45em; }
+  padding: 0; }
 
 .hero {
   position: relative;
@@ -6929,6 +6933,10 @@ p {
 
 .form {
   background-color: #eff1f3; }
+  .form .input-group-text {
+    padding: 0 .3rem; }
+  .form .form-control {
+    height: 1.6rem; }
   .form label {
     font-size: .6rem; }
 
