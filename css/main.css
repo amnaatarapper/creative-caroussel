@@ -4763,13 +4763,6 @@ p {
     bottom: 0;
     height: 100%;
     width: 100%; }
-    .hero .container-fluid .caroussel::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(68, 58, 50, 0.75); }
     .hero .container-fluid .caroussel .carousel {
       height: inherit; }
       .hero .container-fluid .caroussel .carousel .carousel-inner {
@@ -4784,6 +4777,14 @@ p {
             object-fit: cover; }
           .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container {
             height: 100%; }
+            .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container::after {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              top: 0;
+              left: 0;
+              background-color: rgba(68, 58, 50, 0.75); }
             .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container .row {
               height: 100%; }
               .hero .container-fluid .caroussel .carousel .carousel-inner .carousel-item .container .row .col-10 {

@@ -7,6 +7,7 @@
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
@@ -14,7 +15,8 @@
     "node-sass": "^4.13.1"
   },
   "scripts": {
-    "sass": "node-sass -w scss/ -o css/ --recursive"
+    "sass": "node-sass -w scss/ -o css/ --recursive",
+    "build": "gulp build"
   },
   "author": "",
   "license": "ISC"
