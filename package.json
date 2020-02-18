@@ -3,12 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
     "node-sass": "^4.13.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "sass": "node-sass -w scss/ -o css/ --recursive" 
+    "sass": "node-sass -w scss/ -o css/ --recursive"
   },
   "author": "",
   "license": "ISC"

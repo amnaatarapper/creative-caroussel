@@ -428,15 +428,14 @@ p {
                     }
                 }
             }
-        
     }
 }
-
 
 // Page Home / FOOTER 
 // -------------------
 .footer {
     background-color: map-get($theme-colors, "dark");
     font-size: .6rem;
+    color: white;
 }
 
