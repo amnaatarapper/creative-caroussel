@@ -39,6 +39,7 @@ const server = () => {
     watch(paths.styles.src, styles);
     watch(paths.scripts.src).on('change', browserSync.reload);
     watch(paths.html).on('change', browserSync.reload);
+    watch('bootstrap/scss/bootstrap.scss').on('change', series(styles, browserSync.reload));
 }
 
 // Parse SCSS
