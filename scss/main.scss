@@ -394,10 +394,7 @@ p {
                     opacity: 0;
                     width: 0;
                     height: 0;
-    
-                    // &:checked {
-                        
-                    // }
+
                     &:checked + .inner::before {
                         background-color: map-get($theme-colors, "primary");                
                     }
@@ -433,5 +430,46 @@ p {
     background-color: map-get($theme-colors, "dark");
     font-size: .6rem;
     color: white;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: transparentize(map-get($theme-colors, "primary"), .25);
+    opacity: 1;
+    border-radius: 1em;
+    
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: map-get($theme-colors, "dark");
+    }
+}
+
+.animate {
+    animation-name: back-to-top;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes back-to-top {
+    0% {
+        opacity: 0;
+        width: 0px;
+        height: 5px;
+        font-size: 0em;
+    } 25% {
+        width: 40px;
+    } 100% {
+        opacity: 1;
+        height: 40px;
+        font-size: 1em;
+    }
 }
 
